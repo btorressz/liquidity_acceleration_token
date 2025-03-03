@@ -86,3 +86,7 @@ The protocol consists of the following Anchor-based Solana smart contract implem
 | `stake`        | PDA for tracking LP staking positions       |
 
 
+## LICENSE 
+- **THIS PROJECT IS UNDER THE MIT LICENSE**
+
+
