@@ -48,3 +48,41 @@ The protocol consists of the following Anchor-based Solana smart contract implem
 - Staking rewards are adjusted dynamically based on pool volume thresholds.
 - Ensures fair distribution of LAT emissions to maintain sustainable growth.
 
+  ## 📌 Technical Specifications
+
+### ✅ Program State (`ProgramState`)
+
+| Parameter               | Description                                      |
+|-------------------------|--------------------------------------------------|
+| `admin`                | Admin address controlling protocol settings      |
+| `lat_mint`             | The LAT token mint address                      |
+| `trade_reward_rate`    | Base rate for trade rewards                     |
+| `stake_reward_rate`    | Base rate for staking rewards                   |
+| `total_trades`         | Total trades recorded                           |
+| `epoch_trade_volume`   | Total trade volume during the current epoch     |
+| `trade_epoch_duration` | Duration (seconds) for trade reward epochs      |
+| `pool_trading_volume`  | Trading volume for liquidity pools              |
+| `pool_volume_threshold`| Threshold for activating liquidity boosts       |
+| `pool_boost_multiplier`| Boost multiplier for LP staking rewards         |
+
+### ✅ Accounts
+
+| Account            | Description                                      |
+|--------------------|--------------------------------------------------|
+| `Initialize`       | Initializes the LAT protocol state              |
+| `RecordTrade`      | Records a trade and updates pending rewards     |
+| `ClaimTradeRewards` | Allows traders to claim earned LAT rewards     |
+| `StakeLat`         | Enables liquidity providers to stake LAT        |
+| `ClaimRewards`     | LPs claim staking rewards after vesting         |
+| `WithdrawStake`    | Allows LPs to withdraw their staked LAT tokens  |
+
+### ✅ PDA-Based Seed Generation
+
+| Seed Name       | Purpose                                      |
+|----------------|----------------------------------------------|
+| `lat_mint_auth` | Authority PDA for minting LAT rewards       |
+| `vault_auth`   | Authority PDA for managing staking vaults   |
+| `stats`        | PDA for storing individual trader statistics |
+| `stake`        | PDA for tracking LP staking positions       |
+
+
